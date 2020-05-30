@@ -63,7 +63,7 @@ namespace AutoBroadcast
 			catch (Exception ex)
 			{
 				Config = new ABConfig();
-				TShock.Log.ConsoleError("[AutoBroadcast] An exception occurred while parsing the AutoBroadcast config!\n{0}".SFormat(ex.ToString()));
+				TShock.Log.ConsoleError("[AutoBroadcast] O arquivo de configuração possui erros!\n{0}".SFormat(ex.ToString()));
 			}
 			Update.Elapsed += OnUpdate;
 			Update.Start();
@@ -74,13 +74,13 @@ namespace AutoBroadcast
 			try
 			{
 				Config = ABConfig.Read(ConfigPath).Write(ConfigPath);
-				TShock.Log.Info("Successfully reloaded AutoBroadcast config!");
+				TShock.Log.Info("Configuração do AutoBroadcast recarregada com sucesso!");
 			}
 			catch (Exception ex)
 			{
 				Config = new ABConfig();
-				args.Player.SendWarningMessage("An exception occurred while parsing the AutoBroadcast config! check logs for more details!");
-				TShock.Log.ConsoleError("[AutoBroadcast] An exception occurred while parsing the AutoBroadcast config!\n{0}".SFormat(ex.ToString()));
+				args.Player.SendWarningMessage("[AutoBroadcast] O arquivo de configuração possui erros!");
+				TShock.Log.ConsoleError("[AutoBroadcast] O arquivo de configuração possui erros!\n{0}".SFormat(ex.ToString()));
 			}
 		}
 
@@ -333,8 +333,8 @@ namespace AutoBroadcast
 			if (ms == UpdateTimeout && ret) ULock = false;
 			if (warn && ret)
 			{
-				Console.WriteLine("Hook timeout detected in AutoBroadcast. You might want to report this.");
-				TShock.Log.Error("Hook timeout detected in AutoBroadcast. You might want to report this.");
+				Console.WriteLine("Hook timeout detected em AutoBroadcast. O servidor pode estar apresentando DeSync.");
+				TShock.Log.Error("Hook timeout detected em AutoBroadcast. O servidor pode estar apresentando DeSync.");
 			}
 			return ret;
 		}

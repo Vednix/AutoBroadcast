@@ -26,13 +26,13 @@ namespace AutoBroadcast
 		{
 			var Ex = new Broadcast()
 			{
-				Name = "Example Broadcast",
+				Name = "Broadcast de Exemplo",
 				Enabled = false,
 				Messages = new string[]
 				{
-					"This is an example broadcast",
-					"It will broadcast every 5 minutes",
-					"Broadcasts can also execute commands",
+					"Essa é uma mensagem Broadcast de exemplo",
+					"Será mostrada automaticamente a cada 5 minutos",
+					"Também podem ser executados comandos",
 					"/time noon"
 				},
 				ColorRGB = new float[] { 255f, 0f, 0f },
